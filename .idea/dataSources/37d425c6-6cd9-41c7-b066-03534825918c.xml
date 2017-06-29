@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="deco@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="deco">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="world"/>
+    <table id="9" parent="2" name="alternative"/>
+    <table id="10" parent="2" name="answers"/>
+    <table id="11" parent="2" name="matters"/>
+    <table id="12" parent="2" name="questions"/>
+    <table id="13" parent="2" name="resultquestions"/>
+    <table id="14" parent="2" name="resultsimulacrumdetails"/>
+    <table id="15" parent="2" name="resultsmatterdetails"/>
+    <table id="16" parent="2" name="resultsmatterheader"/>
+    <table id="17" parent="2" name="resultssimulacrumheader"/>
+    <table id="18" parent="2" name="resultstopicsdetails"/>
+    <table id="19" parent="2" name="resultstopicsheader"/>
+    <table id="20" parent="2" name="topics"/>
+    <table id="21" parent="2" name="users"/>
+    <column id="22" parent="9" name="id_alternative">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="9" name="id_question">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="24" parent="9" name="description">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <index id="25" parent="9" name="FK">
+      <ColNames>id_question</ColNames>
+    </index>
+    <key id="26" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_alternative</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="10" name="id_answer">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="10" name="id_question">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="29" parent="10" name="answer_description">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <index id="30" parent="10" name="FK">
+      <ColNames>id_question</ColNames>
+    </index>
+    <key id="31" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_answer</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="11" name="id_matter">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="11" name="name_matter">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <key id="34" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_matter</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="12" name="id_question">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="12" name="id_topic">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="37" parent="12" name="id_matter">
+      <Position>3</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="38" parent="12" name="question_description">
+      <Position>4</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <index id="39" parent="12" name="FK">
+      <ColNames>id_topic
+id_matter</ColNames>
+    </index>
+    <key id="40" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_question</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="13" name="id_resultQuestion">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="13" name="id_question">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="43" parent="13" name="option">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <index id="44" parent="13" name="FK">
+      <ColNames>id_question</ColNames>
+    </index>
+    <key id="45" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultQuestion</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="14" name="id_resultSimulacrum">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="14" name="id_resultQuestions">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="48" parent="14" name="result">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <index id="49" parent="14" name="FK">
+      <ColNames>id_resultQuestions</ColNames>
+    </index>
+    <key id="50" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultSimulacrum</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="15" name="id_resultMatter">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="15" name="id_resultQuestions">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="53" parent="15" name="result">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <index id="54" parent="15" name="FK">
+      <ColNames>id_resultQuestions</ColNames>
+    </index>
+    <key id="55" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultMatter</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="56" parent="16" name="id_resultMatter">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="16" name="id_matter">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="58" parent="16" name="id_user">
+      <Position>3</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="59" parent="16" name="porcent">
+      <Position>4</Position>
+      <DataType>decimal(10)|0</DataType>
+    </column>
+    <column id="60" parent="16" name="date">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="61" parent="16" name="time">
+      <Position>6</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <index id="62" parent="16" name="FK">
+      <ColNames>id_matter
+id_user</ColNames>
+    </index>
+    <key id="63" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultMatter</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="64" parent="17" name="id_resultSimulacrum">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="17" name="id_user">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="66" parent="17" name="porcent">
+      <Position>3</Position>
+      <DataType>decimal(10)|0</DataType>
+    </column>
+    <column id="67" parent="17" name="date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="68" parent="17" name="time">
+      <Position>5</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <index id="69" parent="17" name="FK">
+      <ColNames>id_user</ColNames>
+    </index>
+    <key id="70" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultSimulacrum</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="71" parent="18" name="id_resultTopic">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="18" name="id_resultQuestions">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="73" parent="18" name="result">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <index id="74" parent="18" name="FK">
+      <ColNames>id_resultQuestions</ColNames>
+    </index>
+    <key id="75" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultTopic</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="76" parent="19" name="id_resultTopic">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="19" name="id_topic">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="78" parent="19" name="id_user">
+      <Position>3</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="79" parent="19" name="porcent">
+      <Position>4</Position>
+      <DataType>decimal(10)|0</DataType>
+    </column>
+    <column id="80" parent="19" name="date">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="81" parent="19" name="time">
+      <Position>6</Position>
+      <DataType>time|0</DataType>
+    </column>
+    <index id="82" parent="19" name="FK">
+      <ColNames>id_topic
+id_user</ColNames>
+    </index>
+    <key id="83" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_resultTopic</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="84" parent="20" name="id_topics">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="20" name="id_matter">
+      <Position>2</Position>
+      <DataType>char(4)|0</DataType>
+    </column>
+    <column id="86" parent="20" name="name_topic">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <index id="87" parent="20" name="FK">
+      <ColNames>id_matter</ColNames>
+    </index>
+    <key id="88" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_topics</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="89" parent="21" name="id_user">
+      <Position>1</Position>
+      <DataType>char(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="21" name="type">
+      <Position>2</Position>
+      <DataType>char(1)|0</DataType>
+    </column>
+    <column id="91" parent="21" name="name_user">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="92" parent="21" name="last_name">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="93" parent="21" name="password">
+      <Position>5</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="94" parent="21" name="phone">
+      <Position>6</Position>
+      <DataType>char(9)|0</DataType>
+    </column>
+    <column id="95" parent="21" name="address">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="96" parent="21" name="academy">
+      <Position>8</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <key id="97" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_user</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
